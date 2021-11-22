@@ -19,16 +19,46 @@ const db = mysql.createConnection(
         // Your mySQL usernmae,
         user: 'root',
         // Your mySQL password
-        password: '1rq42ew3',
+        password: 'bnmc7654',
         database: 'election'
     },
     console.log('Connected to the election database.')
 );
 
+// // returns all data in the candidate table 
+// db.query(`SELECT * FROM candidates`, (err, rows) => {
+//     console.log(rows);
+// });
 
-db.query(`SELECT * FROM candidates`, (err, rows) => {
-    console.log(rows);
-});
+
+// // return a single candidate
+// db.query(`SELECT * FROM candidates WHERE ID = 1`, (err, row) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(row);
+// });
+
+// Delete a candidate
+// db.query(`DELETE FROM candidates WHERE ID = ?`, 1, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
+// });
+
+// //Create a candidate
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
+// Values (?,?,?,?)`;
+// const params = [1, 'Ronald', 'Firbank', 1];
+
+// db.query(sql, params, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
+// });
+
 
 // default response for any other request (Not Found)
 app.use((req, res) => {
